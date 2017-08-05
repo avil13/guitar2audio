@@ -6,7 +6,7 @@
   "scripts": {
     "start": "NODE_ENV=development webpack-dashboard -- webpack-dev-server",
     "dev": "webpack-dev-server --hot",
-    "build": "NODE_ENV=production webpack",
+    "build": "NODE_ENV=production webpack --progress --profile --colors",
     "prepublish": "NODE_ENV=production webpack"
   },
   "keywords": [
@@ -27,11 +27,20 @@
     "style-loader": "^0.18.2",
     "webpack": "^2.6.1",
     "webpack-dashboard": "^0.4.0",
-    "webpack-dev-server": "^2.4.5"
+    "webpack-dev-server": "^2.4.5",
+    "webpack-merge": "^4.1.0"
   },
   "dependencies": {
     "awesome-typescript-loader": "^3.2.2",
     "clean-webpack-plugin": "^0.1.16",
     "typescript": "^2.4.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avil13/guitar2audio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/avil13/guitar2audio/issues"
+  },
+  "homepage": "https://github.com/avil13/guitar2audio#readme"
 }
