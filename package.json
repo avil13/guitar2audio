@@ -1,0 +1,37 @@
+{
+  "name": "guitar2audio",
+  "version": "0.1.0",
+  "description": "Guitar2audio - js library for working with web audio",
+  "main": "dist/guitar2audio.js",
+  "scripts": {
+    "start": "NODE_ENV=development webpack-dashboard -- webpack-dev-server",
+    "dev": "webpack-dev-server --hot",
+    "build": "NODE_ENV=production webpack",
+    "prepublish": "NODE_ENV=production webpack"
+  },
+  "keywords": [
+    "webaudio",
+    "guitar"
+  ],
+  "author": "Jesper Orb",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.5.2",
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "html-webpack-plugin": "^2.28.0",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^2.6.1",
+    "webpack-dashboard": "^0.4.0",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "dependencies": {
+    "awesome-typescript-loader": "^3.2.2",
+    "clean-webpack-plugin": "^0.1.16",
+    "typescript": "^2.4.2"
+  }
+}
