@@ -1,5 +1,7 @@
 interface IEffect {
     name: string;
+
+    start(): void;
     
     getter(): number|string;
 

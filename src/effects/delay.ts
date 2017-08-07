@@ -7,15 +7,19 @@ const delay: IEffect = {
 
     name: 'delay',
 
-    setter(val: number): void {
+    start() {
         this.delayNode = this.delayNode || this.audioContext.createDelay();
+
+        this.inputNode.connect(this.delayNode);
+    },
+
+    setter(val: number): void {
         this.delayNode.delayTime.value = val; // 1 second delay
 
         // console.log(`delay is ${this.delayNode.delayTime.value} second`);
     },
 
     getter(): number {
-        this.delayNode = this.delayNode || this.audioContext.createDelay();
         return this.delayNode.delayTime.value; // second delay
     },
 

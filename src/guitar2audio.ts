@@ -9,7 +9,7 @@ const Guitar2audio = (function () {
         console.log(args);
     };
     var _successHandler = (...args) => {
-        console.log(args);
+        // console.log(args);
     };
     // var __audioContext: AudioContext;
     // var __inputNode: MediaStreamAudioSourceNode;
@@ -66,6 +66,9 @@ const Guitar2audio = (function () {
     function _activatePlugins() {
         for (let i = 0; i < effects.length; i++) {
             let v = effects[i];
+
+            v.start.call(_self);
+
             Object.defineProperty(
                 _self.ls,
                 v.name,

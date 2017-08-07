@@ -4,6 +4,13 @@
 const distortion: IEffect = {
     name: 'distortion',
 
+    start() {
+        // distortion pedal
+        this.waveShaperNode = this.waveShaperNode || this.audioContext.createWaveShaper();
+        this.waveShaperNode.oversample = '4x';
+        this.inputNode.connect(this.waveShaperNode);
+    },
+
     setter(val: number): void {
 
         const makeDistortionCurve = (amount?: number) => {
@@ -24,19 +31,16 @@ const distortion: IEffect = {
             return curve;
         };
 
-
-        // distortion pedal
-        this.waveShaperNode = this.waveShaperNode || this.audioContext.createWaveShaper();
-        this.waveShaperNode.oversample = '4x';
         this.waveShaperNode.curve = makeDistortionCurve(val);
-
+        // Hack
+        this.___distortion = val;
         console.log(`distortion value is ~ ${val}`);
     },
 
     getter() {
-        this.waveShaperNode = this.waveShaperNode || this.audioContext.createWaveShaper();
-        // FIXME: возвращается большое число
-        return this.waveShaperNode.curve;
+        // Hack
+        return this.___distortion;
+        // return this.waveShaperNode.curve; // FIXME: возвращается большое число
     },
 
     default: 400,

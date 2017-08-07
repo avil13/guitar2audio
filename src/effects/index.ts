@@ -8,5 +8,5 @@ export const effects = [
     gain,
     delay,
     distortion,
-    falnger,
+    // falnger,
 ];

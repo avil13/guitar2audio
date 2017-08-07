@@ -1,11 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <h1>Webpack boilerplate</h1>
-  </body>
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="center">
+            <h1>Guitar2audio</h1>
+        </div>
+        <hr>
+        <div class="center">
+            <div>
+                <label for="gain">gain</label>
+                <input type="text" id="gain">
+            </div>
+            <div>
+                <label for="distortion">distortion</label>
+                <input type="text" id="distortion">
+            </div>
+            <div>
+                <label for="falnger">falnger</label>
+                <input type="text" id="falnger">
+            </div>
+            <div>
+                <label for="delay">delay</label>
+                <input type="text" id="delay">
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>
