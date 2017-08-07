@@ -8,6 +8,9 @@ const Guitar2audio = (function () {
     var _errorHandler = (...args) => {
         console.log(args);
     };
+    var _successHandler = (...args) => {
+        console.log(args);
+    };
     // var __audioContext: AudioContext;
     // var __inputNode: MediaStreamAudioSourceNode;
 
@@ -26,6 +29,9 @@ const Guitar2audio = (function () {
         // config
         if (config.onError && typeof config.onError === 'function') {
             _errorHandler = config.onError;
+        }
+        if (config.success && typeof config.success === 'function') {
+            _successHandler = config.success;
         }
 
         // 
@@ -47,6 +53,7 @@ const Guitar2audio = (function () {
                     _self.inputNode.connect(_self.audioContext.destination);
 
                     _activatePlugins();
+                    _successHandler(_self);
                 },
                 _errorHandler
             );
@@ -57,8 +64,8 @@ const Guitar2audio = (function () {
 
 
     function _activatePlugins() {
-        for (let k in effects) {
-            let v = effects[k];
+        for (let i = 0; i < effects.length; i++) {
+            let v = effects[i];
             Object.defineProperty(
                 _self.ls,
                 v.name,

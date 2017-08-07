@@ -1,6 +1,6 @@
 {
   "name": "guitar2audio",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Guitar2audio - js library for working with web audio",
   "main": "dist/guitar2audio.js",
   "scripts": {

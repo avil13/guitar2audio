@@ -4,9 +4,9 @@ import falnger from './falnger';
 import gain from './gain';
 
 
-export const effects = {
+export const effects = [
+    gain,
     delay,
     distortion,
     falnger,
-    gain
-};
+];
